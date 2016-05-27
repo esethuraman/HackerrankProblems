@@ -1,0 +1,8 @@
+Main class	
+	get the string
+	based on the length of the string(n) :
+		find factorial for that n
+		select the file path
+		for i is 0 to n!:
+			In the selected folder
+			based on first letter of the 
