@@ -43,7 +43,7 @@ class Utils {
 		int affectedCouponVariety, affectedCouponNos, availableCouponNos;
 		
 		for(Entry<Integer, Integer> entry : affectedCouponsMap.entrySet()){
-			affectedCouponVariety = entry.getValue(); 
+			affectedCouponVariety = entry.getKey(); 
 			affectedCouponNos = entry.getValue();
 			availableCouponNos = couponsInHand.get(affectedCouponVariety);
 			couponsInHand.put(affectedCouponVariety, (availableCouponNos - affectedCouponNos));

@@ -25,7 +25,6 @@ public class PaymentCalculator {
 				
 				couponsUsed = (couponsNeeded <= couponsAvailable) ? couponsNeeded : couponsAvailable;
 				
-				couponsUsed = couponsNeeded;
 				if(couponsUsed >= 1){
 					billAmount = billAmount % (couponsUsed * couponVariety);
 					affectedCouponVarietiesMap.put(couponVariety, couponsUsed);
