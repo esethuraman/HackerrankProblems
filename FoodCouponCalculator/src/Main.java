@@ -29,7 +29,7 @@ public class Main {
 		Scanner in = new Scanner(System.in);
 		System.out.println("Enter the bill amount : ");
 		int billAmount = in.nextInt();
-		Map<Integer, Integer> affectedCouponsMap = new PaymentCalculator().findTheCouponsToBePaid(billAmount, totalAmount);
+		Map<Integer, Integer> affectedCouponsMap = new PaymentCalculator().findTheCouponsToBePaid(billAmount, totalAmount, inHandCouponsInfo);
 		couponsInHand = utils.updateInHandCouponsInfo(couponsInHand, affectedCouponsMap);
 		inHandCouponsInfo.setInHandCouponsInfo(couponsInHand);
 		

@@ -1,11 +1,9 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class PaymentCalculator {
 	
-	Map<Integer, Integer> findTheCouponsToBePaid(int billAmount, int totalAmount){
+	public Map<Integer, Integer> findTheCouponsToBePaid(int billAmount, int totalAmount, InHandCouponsInfoDAO inHandCouponsInfo){
 		
 		if(billAmount > totalAmount){
 			System.out.println("Insufficient coupon amount. ");
@@ -16,18 +14,25 @@ public class PaymentCalculator {
 		}
 		
 		else{
-			List<Integer> list = new ArrayList<>();
-			int couponsUsed;
-			Map<Integer, Integer> affectedCouponVarietiesMap = new HashMap<>();
-			for(Integer couponVariety : list){
-				couponsUsed = billAmount/couponVariety;
+			int couponsNeeded, couponsAvailable, couponsUsed;
+			Map<Integer, Integer> affectedCouponVarietiesMap = new TreeMap<Integer, Integer>();
+			Map<Integer, Integer> inHandCouponsMap = inHandCouponsInfo.getInHandCouponsInfo();  
+			
+			for(Integer couponVariety : inHandCouponsMap.keySet()){
+				couponsNeeded = billAmount/couponVariety;
+				couponsAvailable = inHandCouponsMap.get(couponVariety);
+				
+				couponsUsed = (couponsNeeded <= couponsAvailable) ? couponsNeeded : couponsAvailable;
+				
+				couponsUsed = couponsNeeded;
 				if(couponsUsed >= 1){
-					billAmount = billAmount % couponVariety;
+					billAmount = billAmount % (couponsUsed * couponVariety);
 					affectedCouponVarietiesMap.put(couponVariety, couponsUsed);
 				}
 				if(billAmount == 0){
 					break;
 				}
+				
 			}
 			
 			System.out.println("Coupons to be paid for the sum of " + totalAmount + " rupees : ");
