@@ -20,7 +20,7 @@ public class Main {
 		varietyOfCoupons = new CouponVarietyInitializer().initializeCouponVarieties();
 		inHandCouponsInfo.setCouponVarieties(varietyOfCoupons);
 		
-		couponsInHand = new InHandCouponsInitializer(varietyOfCoupons).initializeCouponsInHand();;
+		couponsInHand = new InHandCouponsInitializer(varietyOfCoupons).initializeCouponsInHand();
 		inHandCouponsInfo.setInHandCouponsInfo(couponsInHand);
 		
 		Utils utils = new Utils();

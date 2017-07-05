@@ -18,6 +18,10 @@ public class InHandCouponsInitializer {
 		
 		System.out.println("Enter the details for coupons in hand ... ");
 		Scanner in = new Scanner(System.in);
+		/**
+		 * the keys have to be in descending order so that the maximum coupon value has first priority.
+		 * if this is not done then at times, a lower coupon value would be consumed first 
+		 */
 		Map<Integer, Integer> couponsInHand = new TreeMap<>(Collections.reverseOrder());
 		int numberOfCoupons;
 		

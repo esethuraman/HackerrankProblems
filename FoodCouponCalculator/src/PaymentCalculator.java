@@ -5,6 +5,7 @@ public class PaymentCalculator {
 	
 	public Map<Integer, Integer> findTheCouponsToBePaid(int billAmount, int totalAmount, InHandCouponsInfoDAO inHandCouponsInfo){
 		
+//		TODO - handle the partial cash and coupon payment scenario here
 		if(billAmount > totalAmount){
 			System.out.println("Insufficient coupon amount. ");
 			System.out.println("Coupons available only for " + totalAmount + " rupees");
