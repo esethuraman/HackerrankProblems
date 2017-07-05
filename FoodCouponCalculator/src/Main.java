@@ -34,7 +34,7 @@ public class Main {
 		inHandCouponsInfo.setInHandCouponsInfo(couponsInHand);
 		
 		System.out.println();
-		System.out.println(utils.printTheMap(couponsInHand));
+//		System.out.println(utils.printTheMap(couponsInHand));
 	}
 
 }
