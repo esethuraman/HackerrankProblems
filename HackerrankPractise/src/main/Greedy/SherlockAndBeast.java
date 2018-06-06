@@ -35,6 +35,7 @@ public class SherlockAndBeast {
     }
 
 
+    // Attribution: Hackerrank discussion forum
     private static String findDecentNumber(int n) {
         int fivesCount = n, threesCount = 0;
         while(fivesCount%3 != 0 ){
